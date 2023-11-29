@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from scrape import scrape_data
+from transform import transform_data
+from save import save_data
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+url = "https://en.wikipedia.org/wiki/Comma-separated_values"
+csv_file_path = "data/cars_data.csv"
 
+table = scrape_data(url)
+transformed_table = transform_data(table)
+save_data(transformed_table, csv_file_path)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
